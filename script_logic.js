@@ -11,15 +11,15 @@ window.onload = function() {
 }
 
 function setGame() {
-    game_board = [[0, 0, 0, 0], 
-                  [0, 0, 0, 0], 
-                  [0, 0, 0, 0], 
-                  [0, 0, 0, 0]];
+    // game_board = [[0, 0, 0, 0], 
+    //               [0, 0, 0, 0], 
+    //               [0, 0, 0, 0], 
+    //               [0, 0, 0, 0]];
 
-    // game_board = [[2, 4, 2, 4], 
-    //                 [4, 2, 4, 2], 
-    //                 [2, 4, 2, 4], 
-    //                 [4, 2, 4, 2]];
+    game_board = [[2, 4, 2, 4], 
+                    [4, 2, 4, 2], 
+                    [2, 4, 2, 4], 
+                    [4, 2, 4, 2]];
 
     // game_board = [[0, 2048, 2048, 0], 
     //                 [0, 0, 0, 0], 
@@ -245,6 +245,8 @@ function checkMovability() {
     }
     keyEventActive = 0;
     makeCheatButton();
+    const cheatB = document.getElementById("cheat_button");
+    cheatB.addEventListener('click', cheatTwoTiles);
 }
 
 //make win button: unfinished
@@ -270,15 +272,15 @@ function makeCheatButton() {
     const button = document.createElement('button');
     button.textContent = '点击输入密码：我什么都做不到';
     button.classList.add("big_button");
-    button.id = "win_button";
+    button.id = "cheat_button";
     const buttonContainer = document.getElementById('board');
     buttonContainer.appendChild(button);
-    const cheatB = document.getElementById("cheat_button");
-    cheatB.addEventListener('click', cheatTwoTiles);
+
 }
 
 //remove randomly remove 1-2 tiles from the full, unslidable grid
 function cheatTwoTiles() {
+    console.log("clicked");
     id1 = selectTileDelete();
     r1 = getRowInd(id1);
     c1 = getColInd(id1);
@@ -288,10 +290,10 @@ function cheatTwoTiles() {
     c2 = getColInd(id2);
 
 
-    game_board[r][c] = 0;
     game_board[r1][c1] = 0;
-    setTile(r, c);
+    game_board[r2][c2] = 0;
     setTile(r1, c1);
+    setTile(r2, c2);
     keyEventActive = 1;
     document.getElementById("cheat_button").remove();
 }
@@ -299,15 +301,20 @@ function cheatTwoTiles() {
 function selectTileDelete() {
     var list_2s = document.getElementsByClassName("class_2")
     var list_4s = document.getElementsByClassName("class_4")
-    var arr_all = Array.from(list_2s);
+    var rand_index;
+    var element;
 
-    for (var i = 0; i < list_4s.length; i++){
-        arr_all.push(list_4s);
+    if (Math.random() <= 0.5){
+        rand_index = getRandIndex(0,list_2s.length - 1);
+        element = list_2s[rand_index];
+        return element.id;
+    } else {
+        rand_index = getRandIndex(0,list_4s.length - 1);
+        element = list_4s[rand_index];
+        return element.id;
+
     }
 
-    var rand_index = getRandIndex(0,arr_all.length - 1);
-
-    return arr_all[rand_index].id;
 }
 
 function getRowInd(tile_id_string) {
