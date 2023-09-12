@@ -16,6 +16,16 @@ function setGame() {
                   [0, 0, 0, 0], 
                   [0, 0, 0, 0]];
 
+    // game_board = [[2, 4, 2, 4], 
+    //                 [4, 2, 4, 2], 
+    //                 [2, 4, 2, 4], 
+    //                 [4, 2, 4, 2]];
+
+    // game_board = [[0, 2048, 2048, 0], 
+    //                 [0, 0, 0, 0], 
+    //                 [0, 0, 0, 0], 
+    //                 [0, 0, 0, 0]];
+
     for (let r = 0; r < row_length; r++) {
         for (let c = 0; c < col_length; c++) {
             let tile = document.createElement("div");
@@ -77,7 +87,7 @@ function updateTile(tile, num) {
         if (num <= 2048) {
             tile.classList.add("class_"+num.toString());
         } else {
-            //call win button
+            makeWinButton();
         }                
     }
 }
@@ -235,35 +245,48 @@ function checkMovability() {
     }
     keyEventActive = 0;
     makeCheatButton();
-    const cheatB = document.getElementById("cheat_button");
-    cheatB.addEventListener('click', cheatTwoTiles);
 }
 
 //make win button: unfinished
 function makeWinButton() {
     const button = document.createElement('button');
-    button.textContent = 'You Win!';
-    button.id = "cheat_button";
+    button.textContent = 'You Win! 为世界上所有的美好而战';
+    button.classList.add("big_button");
+    button.id = "win_button";
     const buttonContainer = document.getElementById('board');
     buttonContainer.appendChild(button);
+    const winB = document.getElementById("win_button");
+    keyEventActive = 0;
+    winB.addEventListener('click', winNewGame);
+}
+
+function winNewGame() {
+    reload();
+    document.getElementById("win_button").remove();
 }
 
 //create cheat button
 function makeCheatButton() {
     const button = document.createElement('button');
     button.textContent = '点击输入密码：我什么都做不到';
-    button.id = "cheat_button";
+    button.classList.add("big_button");
+    button.id = "win_button";
     const buttonContainer = document.getElementById('board');
     buttonContainer.appendChild(button);
+    const cheatB = document.getElementById("cheat_button");
+    cheatB.addEventListener('click', cheatTwoTiles);
 }
 
 //remove randomly remove 1-2 tiles from the full, unslidable grid
 function cheatTwoTiles() {
-    console.log("clicked");
-    let r = getRandIndex(0,3);
-    let c = getRandIndex(0,3);
-    let r1 = getRandIndex(0,3);
-    let c1 = getRandIndex(0,3);
+    id1 = selectTileDelete();
+    r1 = getRowInd(id1);
+    c1 = getColInd(id1);
+
+    id2 = selectTileDelete();
+    r2 = getRowInd(id2);
+    c2 = getColInd(id2);
+
 
     game_board[r][c] = 0;
     game_board[r1][c1] = 0;
@@ -271,8 +294,33 @@ function cheatTwoTiles() {
     setTile(r1, c1);
     keyEventActive = 1;
     document.getElementById("cheat_button").remove();
-
 }
+
+function selectTileDelete() {
+    var list_2s = document.getElementsByClassName("class_2")
+    var list_4s = document.getElementsByClassName("class_4")
+    var arr_all = Array.from(list_2s);
+
+    for (var i = 0; i < list_4s.length; i++){
+        arr_all.push(list_4s);
+    }
+
+    var rand_index = getRandIndex(0,arr_all.length - 1);
+
+    return arr_all[rand_index].id;
+}
+
+function getRowInd(tile_id_string) {
+    var arr = tile_id_string.split('-');
+    return arr[0];
+}
+
+function getColInd(tile_id_string) {
+    var arr = tile_id_string.split('-');
+    return arr[1];
+}
+
+
 
 
 

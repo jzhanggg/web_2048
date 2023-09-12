@@ -17,8 +17,8 @@ h1 {
     width: 400px;
     height: 400px;
     display: flex;
-    background-color: #f3d0eb;
-    border: 6px solid #72236a;
+    background-color: #9ac2e6;
+    border: 6px solid #3144a5;
     margin: 0 auto;
     display: flex;
     gap: 0px;
@@ -26,7 +26,7 @@ h1 {
 }
 
 #restart_button {
-    background-color: #e9785f;
+    background-color: #3048a1;
     color: white;
     margin-bottom: 20px;
     padding: 10px 20px;
@@ -41,8 +41,7 @@ h1 {
     border: none;
 }
 
-#cheat_button { 
-    background-image: url("cry.png");
+.big_button {
     background-size: 400px 400px;
     position: absolute;
     border: none;
@@ -58,7 +57,11 @@ h1 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    opacity: 0.5;
+    opacity: 0.95;
+}
+
+#cheat_button { 
+    background-image: url("cry.png");
 }
 
 #cheat_button:hover{
@@ -66,11 +69,19 @@ h1 {
     opacity: 1;
 }
 
+#win_button {
+    background-image: url("win.JPG");
+    justify-content: flex-start;
+    font-size: 24px;
+    color: #3c0a41;
+
+}
+
 
 .tile {
     width: 90px;
     height: 90px;
-    border: 5px solid #72236a;
+    border: 5px solid #3144a5;
 
     font-size: 30px;
     font-weight: bold;
@@ -146,12 +157,3 @@ h1 {
     color: white;
 }
 
-.class_4096 {
-    background-color: #fe3d3d;
-    color: white;
-}
-
-.class_8192 {
-    background-color: #ff2020;
-    color: white;
-}
