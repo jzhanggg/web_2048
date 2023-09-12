@@ -11,20 +11,12 @@ window.onload = function() {
 }
 
 function setGame() {
-    // game_board = [[0, 0, 0, 0], 
-    //               [0, 0, 0, 0], 
-    //               [0, 0, 0, 0], 
-    //               [0, 0, 0, 0]];
+    game_board = [[0, 0, 0, 0], 
+                  [0, 0, 0, 0], 
+                  [0, 0, 0, 0], 
+                  [0, 0, 0, 0]];
 
-    game_board = [[2, 4, 2, 4], 
-                    [4, 2, 4, 2], 
-                    [2, 4, 2, 4], 
-                    [4, 2, 4, 2]];
 
-    // game_board = [[0, 2048, 2048, 0], 
-    //                 [0, 0, 0, 0], 
-    //                 [0, 0, 0, 0], 
-    //                 [0, 0, 0, 0]];
 
     for (let r = 0; r < row_length; r++) {
         for (let c = 0; c < col_length; c++) {
@@ -87,7 +79,9 @@ function updateTile(tile, num) {
         if (num <= 2048) {
             tile.classList.add("class_"+num.toString());
         } else {
-            makeWinButton();
+            makeWinButton();       
+            const winB = document.getElementById("win_button");
+            winB.addEventListener('click', winNewGame);
         }                
     }
 }
@@ -257,9 +251,7 @@ function makeWinButton() {
     button.id = "win_button";
     const buttonContainer = document.getElementById('board');
     buttonContainer.appendChild(button);
-    const winB = document.getElementById("win_button");
     keyEventActive = 0;
-    winB.addEventListener('click', winNewGame);
 }
 
 function winNewGame() {

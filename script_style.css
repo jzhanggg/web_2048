@@ -57,7 +57,7 @@ h1 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    opacity: 0.95;
+    opacity: 0.4;
 }
 
 #cheat_button { 
@@ -74,7 +74,11 @@ h1 {
     justify-content: flex-start;
     font-size: 24px;
     color: #3c0a41;
+}
 
+#win_button:hover{
+    border: none;
+    opacity: 1;
 }
 
 
@@ -98,19 +102,19 @@ h1 {
 /* colored tiles */
 
 .class_2 {
-    background-image: url("i2.jpg");
+    background-image: url("i2.png");
     background-size: 90px 90px;
-    color: #918f8f;
+    color: #ffffff;
 }
 
 .class_4 {
-    background-image: url("i4.JPG");
+    background-image: url("i4.png");
     background-size: 90px 90px;
-    color: #727371;
+    color: #ffffff;
 }
 
 .class_8 {
-    background-image: url("i8.jpg");
+    background-image: url("i8.png");
     background-size: 90px 90px;
     color: white;
 }
@@ -118,42 +122,49 @@ h1 {
 .class_16{
     background-image: url("i16.jpg");
     background-size: 90px 90px;
-    color: #b4b5b4;
+    color: #fcfcfc;
 }
 
 .class_32{
-    background-image: url("i32.jpg");
+    background-image: url("i32.png");
     background-size: 90px 90px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .class_64{
-    background-color: #f65d3b;
+    background-image: url("i64.png");
+    background-size: 90px 90px;    
     color: white;
 }
 
 .class_128{
-    background-color: #edce71;
+    background-image: url("i128.jpg");
+    background-size: 90px 90px;
     color: white;
 }
 
 .class_256{
-    background-color: #edcc63;
-    color: white;
+    background-image: url("i256.png");
+    background-size: 90px 90px;
+    color: rgb(255, 255, 255);
+
 }
 
 .class_512{
-    background-color: #edc651;
-    color: white;
+    background-image: url("i512.jpg");
+    background-size: 90px 90px;
+    color: rgb(240, 157, 80);
 }
 
 .class_1024{
-    background-color: #eec744;
-    color: white;
+    background-image: url("i1024.png");
+    background-size: 90px 90px;
+    color: rgb(247, 143, 47);
 }
 
 .class_2048{
-    background-color: #ecc230;
-    color: white;
+    background-image: url("i2048.jpg");
+    background-size: 90px 90px;
+    color: rgb(244, 120, 4);
 }
 
