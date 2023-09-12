@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url("bg.png");
+    background-size: cover;
+}
+
+hr {
+    width: 500px;
+}
+
+h1 {
+    color: white;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    background-color: #f3d0eb;
+    border: 6px solid #72236a;
+    margin: 0 auto;
+    display: flex;
+    gap: 0px;
+    flex-wrap: wrap;
+}
+
+#restart_button {
+    background-color: #e9785f;
+    color: white;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+#restart_button:hover {
+    background-color: #e15434;
+    border: none;
+}
+
+#cheat_button { 
+    background-image: url("cry.png");
+    background-size: 400px 400px;
+    position: absolute;
+    border: none;
+    height: 400px;
+    width: 400px;
+    font-size: 25px;
+    font-size-adjust: inherit;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0.5;
+}
+
+#cheat_button:hover{
+    border: none;
+    opacity: 1;
+}
+
+
+.tile {
+    width: 90px;
+    height: 90px;
+    border: 5px solid #72236a;
+
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: right;
+    align-items:flex-end;
+}
+
+.tile .text {
+    padding: 10px;
+
+}
+
+/* colored tiles */
+
+.class_2 {
+    background-image: url("i2.jpg");
+    background-size: 90px 90px;
+    color: #918f8f;
+}
+
+.class_4 {
+    background-image: url("i4.JPG");
+    background-size: 90px 90px;
+    color: #727371;
+}
+
+.class_8 {
+    background-image: url("i8.jpg");
+    background-size: 90px 90px;
+    color: white;
+}
+
+.class_16{
+    background-image: url("i16.jpg");
+    background-size: 90px 90px;
+    color: #b4b5b4;
+}
+
+.class_32{
+    background-image: url("i32.jpg");
+    background-size: 90px 90px;
+    color: white;
+}
+
+.class_64{
+    background-color: #f65d3b;
+    color: white;
+}
+
+.class_128{
+    background-color: #edce71;
+    color: white;
+}
+
+.class_256{
+    background-color: #edcc63;
+    color: white;
+}
+
+.class_512{
+    background-color: #edc651;
+    color: white;
+}
+
+.class_1024{
+    background-color: #eec744;
+    color: white;
+}
+
+.class_2048{
+    background-color: #ecc230;
+    color: white;
+}
+
+.class_4096 {
+    background-color: #fe3d3d;
+    color: white;
+}
+
+.class_8192 {
+    background-color: #ff2020;
+    color: white;
+}
