@@ -85,9 +85,11 @@ function generateTile() {
             let tile = document.getElementById(r.toString() + "-" + c.toString());
 
             if (Math.random() < 0.8) {
+                game_board[r][c] = 2;
                 tile.innerText = "2";
                 tile.classList.add("class_2");
             } else {
+                game_board[r][c] = 4;
                 tile.innerText = "4";
                 tile.classList.add("class_4");
             }
