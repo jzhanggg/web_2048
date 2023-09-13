@@ -6,17 +6,51 @@ var keyEventActive = 1;
 
 //Setup game
 window.onload = function() {
+    preload_image("i2.png");
+    preload_image("i4.png");
+    preload_image("i8.png");
+    preload_image("i16.jpg");
+    preload_image("i32.png");
+    preload_image("i64.png");
+    preload_image("i128.jpg");
+    preload_image("i256.png");
+    preload_image("i512.jpg");
+    preload_image("1024.png");
+    preload_image("i2048.jpg");
+
     setGame();
     document.getElementById('restart_button').addEventListener('click', reload);
 }
 
+function preload_image(im_url) {
+    let img = new Image();
+    img.src = im_url;
+  }
+
 function setGame() {
+    //Initialize
     game_board = [[0, 0, 0, 0], 
                   [0, 0, 0, 0], 
                   [0, 0, 0, 0], 
                   [0, 0, 0, 0]];
 
+    //Test Win
+    // game_board = [[0, 2048, 2048, 0], 
+    //                 [0, 0, 0, 0], 
+    //                 [0, 0, 0, 0], 
+    //                 [0, 0, 0, 0]];
 
+    //Test Lose
+    // game_board = [[2, 4, 8, 16], 
+    //                 [16, 8, 4, 2], 
+    //                 [2, 4, 8, 16], 
+    //                 [16, 8, 4, 2]];
+
+    // //Test display all possible cells
+    // game_board = [[0, 2, 4, 8], 
+    //                 [16, 32, 64, 128], 
+    //                 [256, 512, 1024, 2048], 
+    //                 [0, 0, 0, 0]];
 
     for (let r = 0; r < row_length; r++) {
         for (let c = 0; c < col_length; c++) {
