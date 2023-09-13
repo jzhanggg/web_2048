@@ -147,6 +147,58 @@ document.addEventListener('keyup', (e) => {
     document.getElementById("score").innerText = score;
 })
 
+// touch event listeners
+// Variables to track touch start and end coordinates
+let startX = 0;
+let startY = 0;
+let endX = 0;
+let endY = 0;
+
+// Minimum swipe distance to register as a valid swipe
+const minSwipeDistance = 50;
+
+// Add a touchstart event listener to record the starting touch coordinates
+document.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+});
+
+// Add a touchend event listener to record the ending touch coordinates and determine the swipe direction
+document.addEventListener('touchend', function (e) {
+    endX = e.changedTouches[0].clientX;
+    endY = e.changedTouches[0].clientY;
+
+    // Calculate the differences in coordinates
+    const deltaX = endX - startX;
+    const deltaY = endY - startY;
+
+    // Determine the direction of the swipe
+    if (Math.abs(deltaX) > minSwipeDistance || Math.abs(deltaY) > minSwipeDistance) {
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Horizontal swipe
+            if (deltaX > 0) {
+                slideRight();
+                generateTile();
+                checkMovability();
+            } else {
+                slideLeft();
+                generateTile();
+                checkMovability();
+            }
+        } else {
+            if (deltaY > 0) {
+                slideDown();
+                generateTile();
+                checkMovability();
+            } else {
+                slideUp();
+                generateTile();
+                checkMovability();
+            }
+        }
+    }
+});
+
 //Slide functions
 
 function slide(row) {
