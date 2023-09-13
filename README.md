@@ -5,7 +5,7 @@ https://jzhanggg.github.io/web_2048/script_display.html
 
 # Credits
 Project inspired by: Kenny Yip Coding, https://www.youtube.com/watch?v=XM2n1gu4530&t=994s
-
+<br>
 Images from: Honkai Impact 3rd from Hoyoverse
 
 # How this is different form other 2048
