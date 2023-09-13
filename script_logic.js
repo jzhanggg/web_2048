@@ -4,20 +4,20 @@ var row_length = 4;
 var col_length = 4;
 var keyEventActive = 1;
 
+preload_image("i2.png");
+preload_image("i4.png");
+preload_image("i8.png");
+preload_image("i16.jpg");
+preload_image("i32.png");
+preload_image("i64.png");
+preload_image("i128.jpg");
+preload_image("i256.png");
+preload_image("i512.jpg");
+preload_image("1024.png");
+preload_image("i2048.jpg");
+
 //Setup game
 window.onload = function() {
-    preload_image("i2.png");
-    preload_image("i4.png");
-    preload_image("i8.png");
-    preload_image("i16.jpg");
-    preload_image("i32.png");
-    preload_image("i64.png");
-    preload_image("i128.jpg");
-    preload_image("i256.png");
-    preload_image("i512.jpg");
-    preload_image("1024.png");
-    preload_image("i2048.jpg");
-
     setGame();
     document.getElementById('restart_button').addEventListener('click', reload);
 }
