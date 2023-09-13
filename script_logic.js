@@ -29,10 +29,10 @@ function preload_image(im_url) {
 
 function setGame() {
     //Initialize
-    // game_board = [[0, 0, 0, 0], 
-    //               [0, 0, 0, 0], 
-    //               [0, 0, 0, 0], 
-    //               [0, 0, 0, 0]];
+    game_board = [[0, 0, 0, 0], 
+                  [0, 0, 0, 0], 
+                  [0, 0, 0, 0], 
+                  [0, 0, 0, 0]];
 
     //Test Win
     // game_board = [[0, 2048, 2048, 0], 
@@ -47,10 +47,10 @@ function setGame() {
     //                 [16, 8, 4, 2]];
 
     // //Test display all possible cells
-    game_board = [[0, 2, 4, 8], 
-                    [16, 32, 64, 128], 
-                    [256, 512, 1024, 2048], 
-                    [0, 0, 0, 0]];
+    // game_board = [[0, 2, 4, 8], 
+    //                 [16, 32, 64, 128], 
+    //                 [256, 512, 1024, 2048], 
+    //                 [0, 0, 0, 0]];
 
     for (let r = 0; r < row_length; r++) {
         for (let c = 0; c < col_length; c++) {
