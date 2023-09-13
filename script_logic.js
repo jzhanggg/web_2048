@@ -7,7 +7,7 @@ var keyEventActive = 1;
 preload_image("i2.png");
 preload_image("i4.png");
 preload_image("i8.png");
-preload_image("i16.jpg");
+preload_image("i16.JPG");
 preload_image("i32.png");
 preload_image("i64.png");
 preload_image("i128.jpg");
