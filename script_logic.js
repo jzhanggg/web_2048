@@ -82,7 +82,6 @@ function generateTile() {
         let r = getRandIndex(0,3);
         let c = getRandIndex(0,3);
         if (game_board[r][c] == 0) {
-            game_board[r][c] = 2;
             let tile = document.getElementById(r.toString() + "-" + c.toString());
 
             if (Math.random() < 0.8) {
