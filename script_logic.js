@@ -155,7 +155,7 @@ let endX = 0;
 let endY = 0;
 
 // Minimum swipe distance to register as a valid swipe
-const minSwipeDistance = 50;
+const minSwipeDistance = 10;
 
 // Add a touchstart event listener to record the starting touch coordinates
 document.addEventListener('touchstart', function (e) {
